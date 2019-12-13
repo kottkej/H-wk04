@@ -30,7 +30,11 @@ body{
     border: 3px solid lightseagreen;
     color : lightseagreen;
 }
-
+#timeDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 #qImg{
     width : 200px;
     height : 200px;
