@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Multiple Choice Quiz</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div id="container">
+        <div id="viewhighscore"><button id="viewHighScores" onclick="viewHighScores()">View Highscores</button></div>
+        <div id="timeDiv">Time:  <span id="timespan">0</span></div>
+        <div id="start">Start Quiz!</div>
+            <div id="quiz"  style="display : none">
+                <div id="question"> <p>Question</p></div>
+                <div id="qImage"></div>
+                <div id="choices">
+                    <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
+                </div>
+        <div id="yes" style="display: none">Correct</div>
+        <div id="wrong" style="display: none">Wrong</div>
+            </div>
+        <div id="scoreDiv"   style = "display: none;">
+            <h2>Your score</h2>
+            <h3 id="yourscore">Placeholder</h3>
+            <input id="initials"></input>
+            <button id="storeScore" onclick="storeScore()">Submit to Store</button>
+        </div>
+        <div id="highscoresDiv" style = "display: none;">
+            <h1>High Scores</h1>
+            <div id="highscores"></div>
+        </div>
+        <script src="quiz.js"></script>
+    </div>
+</body>
+</html>
