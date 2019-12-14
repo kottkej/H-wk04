@@ -15,7 +15,10 @@
     const wrongAnswer = 15;
     let TIMER = null;
     const yourscore = document.getElementById("yourscore");
-    let scores = [];
+//Testing
+    //let scores = [];
+    let scores = JSON.parse(localStorage.getItem('highscores')) || [];
+//End testing
     const highscoresDiv = document.getElementById("highscoresDiv");
     const highscores = document.getElementById("highscores");
     const correctDiv = document.getElementById("yes");
