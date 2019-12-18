@@ -15,10 +15,7 @@
     const wrongAnswer = 15;
     let TIMER = null;
     const yourscore = document.getElementById("yourscore");
-//Testing
-    //let scores = [];
     let scores = JSON.parse(localStorage.getItem('highscores')) || [];
-//End testing
     const highscoresDiv = document.getElementById("highscoresDiv");
     const highscores = document.getElementById("highscores");
     const correctDiv = document.getElementById("yes");
@@ -83,7 +80,6 @@ function counterRender(){
     }
 //Checking the answers
 function checkAnswer(answers){
-        console.log(answers,questions[runningQuestionIndex].correct);
     if(questions[runningQuestionIndex].correct == answers){
         correctDiv.style.display = "block";
         setTimeout (function(){correctDiv.style.display = "none";
@@ -125,7 +121,6 @@ function startQuiz(){
 
 function storeScore(){
     let initials = document.getElementById("initials").value;
-    console.log (initials);
     localStorage.setItem("initials",quizTime);
     const score = {
         initials: initials,
@@ -133,7 +128,6 @@ function storeScore(){
       };
     scores.push(score);
     localStorage.setItem("highscores", JSON.stringify(scores));
-    //console.log (localStorage.getItem("highscores"));
     scoreDiv.style.display = "none";
     start.style.display = "block";
     timespan.innerHTML = initialQuizTime;
@@ -147,13 +141,11 @@ function viewHighScores(){
         }else {
         return 1;
         }
-        //return a.yourscore - b.yourscore;
     });
     highscoresDiv.style.display = "block";
     let wildlist = "";
     for (var i=0; i<scores.length; i++){
         wildlist = wildlist + scores[i].initials + " : " + scores[i].yourscore + "<br>";
-        console.log(scores[i]);
     }
     highscores.innerHTML = wildlist;
     question.style.display = "none";
